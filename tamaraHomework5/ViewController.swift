@@ -8,85 +8,73 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        Проектирование меню:
-//
-//        Надо сделать класс/cтруктуру **Меню**, в свойствах которого будет несколько категорий (закуски, основное меню, напитки, десерты) содержащие **абстрактный продукт**. У каждого **конкретного продукта** будет название и стоимость (Например: Название: кофе латте, Стоимость: 10руб)
-//
-//        Сделаем функцию(надеюсь вы помните чем отличается метод от функции) которая при получении **абстрактного продукта** выводит его название и стоимость в консоль
-//        Appetizer
-//        Main course
-//        Bar
-//        Dessert
-
         
         class Menu {
-            let appetizer = "" //поэлементный инициализатор
-            let mainCourse = ""
-            let bar = ""
-            let dessert = ""
-            var product: Product
-            init(product: Product) {
-                self.product = product
+            var position: Position
+            init(position: Position) {
+                self.position = position
             }
         }
         
-        class Product {
-            var name = ""
+        class Position {
+            var name: String = ""
             var price: Double = 0.0
+            func printNameAndPrice() {}
+        }
+                
+        
+        class Appetizer: Position {
+            override func printNameAndPrice() {
+                print(name,price)
+            }
             
-            func printNameAndPrice() {
-                print("\(name) - \(price) BYN")
+        }
+        
+        class MainCourse: Position {
+            override func printNameAndPrice() {
+                print(name, price)
             }
         }
         
-        class Appetizer: Product {
+        class Bar: Position {
+            override func printNameAndPrice() {
+                print(name, price)
+            }
             
         }
         
-        class MainCourse: Product {
-            
-        }
-        
-        class Bar: Product {
-            
-        }
-        
-        class Dessert: Product {
+        class Dessert: Position {
+            override func printNameAndPrice() {
+                print(name, price)
+            }
             
         }
         
         let position1 = Appetizer()
-        position1.name = "Салат Цезарь"
-        position1.price = 17.50
+        position1.name = "Сэндвич"
+        position1.price = 10.70
         position1.printNameAndPrice()
-        
         
         let position2 = MainCourse()
         position2.name = "Бургер"
-        position2.price = 22.20
+        position2.price = 19.90
         position2.printNameAndPrice()
         
         let position3 = Bar()
         position3.name = "Мохито"
-        position3.price = 11.70
+        position3.price = 13.40
         position3.printNameAndPrice()
         
         let position4 = Dessert()
         position4.name = "Чизкейк"
-        position4.price = 8.00
+        position4.price = 9.30
         position4.printNameAndPrice()
         
-            
-        }
-        
-        
+     
     }
-
-
-
-
+}

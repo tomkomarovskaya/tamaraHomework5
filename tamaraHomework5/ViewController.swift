@@ -71,12 +71,12 @@ class ViewController: UIViewController {
         position2.price = 22.20
         position2.printNameAndPrice()
         
-        let position3 = Bar ()
+        let position3 = Bar()
         position3.name = "Мохито"
         position3.price = 11.70
         position3.printNameAndPrice()
         
-        let position4 = Product()
+        let position4 = Dessert()
         position4.name = "Чизкейк"
         position4.price = 8.00
         position4.printNameAndPrice()

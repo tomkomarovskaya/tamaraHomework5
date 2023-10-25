@@ -22,58 +22,44 @@ class ViewController: UIViewController {
         }
         
         class Position {
-            var name: String = ""
-            var price: Double = 0.0
-            func printNameAndPrice() {}
+            var name: String
+            var price: Double
+            init(name: String, price: Double) {
+                self.name = name
+                self.price = price
+            }
         }
                 
         
         class Appetizer: Position {
-            override func printNameAndPrice() {
-                print(name,price)
-            }
             
         }
         
         class MainCourse: Position {
-            override func printNameAndPrice() {
-                print(name, price)
-            }
+            
         }
         
         class Bar: Position {
-            override func printNameAndPrice() {
-                print(name, price)
-            }
             
         }
         
         class Dessert: Position {
-            override func printNameAndPrice() {
-                print(name, price)
-            }
             
         }
         
-        let position1 = Appetizer()
-        position1.name = "Сэндвич"
-        position1.price = 10.70
-        position1.printNameAndPrice()
+        let position1 = Appetizer(name: "Сэндвич", price: 10.70)
         
-        let position2 = MainCourse()
-        position2.name = "Бургер"
-        position2.price = 19.90
-        position2.printNameAndPrice()
+        let position2 = MainCourse(name: "Бургер", price: 19.90)
         
-        let position3 = Bar()
-        position3.name = "Мохито"
-        position3.price = 13.40
-        position3.printNameAndPrice()
+        let position3 = Bar(name: "Мохито", price: 13.40)
         
-        let position4 = Dessert()
-        position4.name = "Чизкейк"
-        position4.price = 9.30
-        position4.printNameAndPrice()
+        let position4 = Dessert(name: "Чизкейк", price: 9.30)
+        
+        func printNamePrice (position: Position) {
+            print("\(position.name)", "\(position.price)")
+        }
+                    
+        printNamePrice(position: MainCourse(name: "Бургер", price: 19.90))
         
      
     }

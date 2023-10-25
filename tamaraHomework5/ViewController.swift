@@ -25,11 +25,14 @@ class ViewController: UIViewController {
 
         
         class Menu {
-            let appitizer = "" //поэлементный инициализатор
+            let appetizer = "" //поэлементный инициализатор
             let mainCourse = ""
             let bar = ""
             let dessert = ""
-            init() {}
+            var product: Product
+            init(product: Product) {
+                self.product = product
+            }
         }
         
         class Product {
@@ -41,25 +44,43 @@ class ViewController: UIViewController {
             }
         }
         
-        let appetizer = Product()
-        appetizer.name = "Салат Цезарь"
-        appetizer.price = 17.50
-        appetizer.printNameAndPrice()
+        class Appetizer: Product {
+            
+        }
         
-        let mainCourse = Product()
-        mainCourse.name = "Бургер"
-        mainCourse.price = 22.20
-        mainCourse.printNameAndPrice()
+        class MainCourse: Product {
+            
+        }
         
-        let bar = Product()
-        bar.name = "Мохито"
-        bar.price = 11.70
-        bar.printNameAndPrice()
+        class Bar: Product {
+            
+        }
         
-        let dessert = Product()
-        dessert.name = "Чизкейк"
-        dessert.price = 8.00
-        dessert.printNameAndPrice()
+        class Dessert: Product {
+            
+        }
+        
+        let position1 = Appetizer()
+        position1.name = "Салат Цезарь"
+        position1.price = 17.50
+        position1.printNameAndPrice()
+        
+        
+        let position2 = MainCourse()
+        position2.name = "Бургер"
+        position2.price = 22.20
+        position2.printNameAndPrice()
+        
+        let position3 = Bar ()
+        position3.name = "Мохито"
+        position3.price = 11.70
+        position3.printNameAndPrice()
+        
+        let position4 = Product()
+        position4.name = "Чизкейк"
+        position4.price = 8.00
+        position4.printNameAndPrice()
+        
             
         }
         
